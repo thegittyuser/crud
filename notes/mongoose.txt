@@ -1,0 +1,24 @@
+What is mongoose?
+
+Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.
+
+It provides a straightforward way to define schemas, validate data, and interact with MongoDB collections using JavaScript objects.
+
+Key Concepts:
+
+MongoDB is a NoSQL database that stores data in flexible, JSON-like documents.
+Mongoose acts as a bridge between your Node.js application and the MongoDB database, allowing you to:
+Define a schema (data structure)
+Enforce validation rules
+Add middleware and hooks (e.g., for pre-save actions)
+Use methods and virtuals for custom logic
+
+Why Use Mongoose?
+Schema-based — helps structure data in a flexible database.
+Validation — ensures data integrity before saving.
+Middleware — allows pre/post hooks (e.g., before saving or deleting).
+Query helpers — powerful and expressive query building.
+Population — enables easy references between documents.
+
+How to install mongoose?
+    npm install mongoose
