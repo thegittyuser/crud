@@ -1,0 +1,2 @@
+MVC:
+MVC (Model-View-Controller) is a popular architectural pattern used to structure applications, including those built with Node.js. While Node.js itself is a runtime and doesn't enforce a specific architecture, frameworks like Express.js are commonly used to implement MVC patterns within Node.js applications.
