@@ -1,10 +1,10 @@
 import express from "express";
 const app = express();
 const port = 3000;
-import mongoose from "mongoose";
 
 // database connection
-mongoose.connect("mongodb://localhost:27017/users_data").then(() => {
+import mongoose from "mongoose";
+mongoose.connect("mongodb://localhost:27017/usersdata").then(() => {
   console.log("Database Connected");
 });
 
