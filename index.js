@@ -1,3 +1,5 @@
+import usersModel from "./models/usersdata.model.js";
+
 import express from "express";
 const app = express();
 const port = 3000;
@@ -24,6 +26,12 @@ app.get("/login", (req, res) => {
 
 app.get("/forget", (req, res) => {
   res.render("reset_form", { title: "Forget Form" });
+});
+
+app.get("/show_users", async (req, res) => {
+  const modelResult = await usersModel.find();
+  // res.json(modelResult);
+  res.render("show_users", { title: "Show Users", modelResult });
 });
 
 app.listen(port, () => {

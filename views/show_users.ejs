@@ -1,0 +1,31 @@
+<%- include("partials/header");%>
+<center>
+  <table border="1" cellpadding="5">
+    <tr>
+      <th colspan="8">Users Records</th>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th colspan="2">Action</th>
+    </tr>
+
+    <% modelResult.forEach( (user) =>{%>
+    <tr>
+      <td><%= user._id %></td>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td><%= user.password %></td>
+      <td><%= user.phone %></td>
+      <td><%= user.address %></td>
+      <td><button>Edit</button></td>
+      <td><button>Delete</button></td>
+    </tr>
+    <% });%>
+  </table>
+</center>
+<%- include("partials/footer");%>
