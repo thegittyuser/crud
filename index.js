@@ -16,22 +16,14 @@ app.get("/", (req, res) => {
   res.send("Hello Express");
 });
 
-app.get("/register", (req, res) => {
-  res.render("register_form", { title: "Registration Form" });
-});
-
-app.get("/login", (req, res) => {
-  res.render("login_form", { title: "Login Form" });
-});
-
-app.get("/forget", (req, res) => {
-  res.render("reset_form", { title: "Forget Form" });
-});
-
 app.get("/show_users", async (req, res) => {
-  const modelResult = await usersModel.find();
+  const userResult = await usersModel.find();
   // res.json(modelResult);
-  res.render("show_users", { title: "Show Users", modelResult });
+  res.render("show_users", { title: "Show Users", userResult });
+});
+
+app.get("/update_data/:id", (req, res) => {
+  res.render("update_data", { title: "Update Form" });
 });
 
 app.listen(port, () => {
