@@ -18,12 +18,7 @@ app.get("/", (req, res) => {
 
 app.get("/show_users", async (req, res) => {
   const userResult = await usersModel.find();
-  // res.json(modelResult);
-  res.render("show_users", { title: "Show Users", userResult });
-});
-
-app.get("/update_data/:id", (req, res) => {
-  res.render("update_data", { title: "Update Form" });
+  res.render("show_users", { title: "Users Record", userResult });
 });
 
 app.listen(port, () => {
