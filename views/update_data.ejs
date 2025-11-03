@@ -1,5 +1,34 @@
 <%- include("partials/header");%>
 
-<h1>Update Now</h1>
+<h2>Update Form</h2>
 
-<%- include("partials/footer");%>
+<form action="/update/<%= userResult._id %>" method="post">
+  <label for="username">Enter Username: </label>
+  <input
+    type="text"
+    name="username"
+    id="username"
+    value="<%= userResult.username %>"
+  />
+  <br /><br />
+  <label for="email">Enter Email: </label>
+  <input type="email" name="email" id="email" value="<%= userResult.email %>" />
+  <br /><br />
+  <label for="password">Enter Password: </label>
+  <input
+    type="password"
+    name="password"
+    id="password"
+    value="<%= userResult.password %>"
+  />
+  <br /><br />
+  <label for="phone">Enter PhoneNo: </label>
+  <input type="tel" name="phone" id="phone" value="<%= userResult.phone %>" />
+  <br /><br />
+  <label for="address">Enter Address: </label><br />
+  <textarea name="address" id="address"><%= userResult.address %></textarea>
+  <br /><br />
+  <input type="submit" value="Update" />
+</form>
+
+<%- include("partials/footer"); %>
