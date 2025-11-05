@@ -1,17 +1,12 @@
-import userRouter from "./routes/usersdata.routes.js"
+import userRouter from "./routes/usersdata.routes.js";
 import mongodb from "./config/dbconnection.js";
-import express from "express";
-const app = express();
-const port = 3000;
+import listening from "./config/exconnection.js";
 
 // database connection callback
-mongodb()
-app.set("view engine", "ejs");
+mongodb();
+// express connection callback
+listening();
+
+// app.set("view engine", "ejs");
 // middleware
-app.use(express.urlencoded({ extended: false }));
-
-
-// listening
-app.listen(port, () => {
-  console.log(`Server is listeing on port ${port}`);
-});
+// app.use(express.urlencoded({ extended: false }));
