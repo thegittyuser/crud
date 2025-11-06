@@ -1,37 +1,22 @@
 import express from "express";
 const router = express.Router();
-import usersModel from "../models/usersdata.model.js";
+import {
+  defaultHome,
+  showUsers,
+  updateData,
+  update,
+  deleteData,
+} from "../controller/userdata.controller.js";
 
 // routes
-const defaultHome = router.get("/", (req, res) => {
-  res.send("Hello Express");
-});
+router.get("/", defaultHome);
 
-const showUsers = router.get("/show_users", async (req, res) => {
-  const userResult = await usersModel.find();
-  res.render("show_users", { title: "Users Record", userResult });
-});
+router.get("/show_users", showUsers);
 
-const updateData = router.get("/update_data/:id", async (req, res) => {
-  const userResult = await usersModel.findById(req.params.id);
-  res.render("update_data", { title: "Update Form", userResult });
-});
+router.get("/update_data/:id", updateData);
 
-const update = router.post("/update/:id", async (req, res) => {
-  const { username, email, password, phone, address } = req.body;
-  await usersModel.findByIdAndUpdate(req.params.id, {
-    username,
-    email,
-    password,
-    phone,
-    address,
-  });
-  res.redirect("/show_users");
-});
+router.post("/update/:id", update);
 
-const deleteData = router.get("/delete_data/:id", async (req, res) => {
-  await usersModel.findByIdAndDelete(req.params.id);
-  res.redirect("/show_users");
-});
+router.get("/delete_data/:id", deleteData);
 
 export default router;
